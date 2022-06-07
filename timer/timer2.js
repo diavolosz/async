@@ -7,6 +7,7 @@ process.stdin.on('data', (key) => {
   } else if (key === "\u0003") {
     process.exit()
   } else {
+    console.log(`setting timer for ${key} seconds...`)
     setTimeout(() => {
       process.stdout.write("\x07" + "BEEP! \n");
     }, key * 1000)
